@@ -1,0 +1,39 @@
+[build-system]
+requires = ["flit_core <4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "cached_method"
+version = "0.1.0"
+description = "The equivalent of cached_property for methods"
+readme = "README.md"
+requires-python = ">= 3.6"
+license = {file = "LICENSE"}
+authors = [{name = "Marten Lienen", email = "marten.lienen@gmail.com"}]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python"
+]
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.urls]
+homepage = "https://github.com/martenlienen/cached_method"
+
+[tool.flit.module]
+name = "cached_method"
+
+[tool.flit.sdist]
+exclude = ["tests/"]
+
+[tool.black]
+line-length = 88
+target-version = ["py36"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
